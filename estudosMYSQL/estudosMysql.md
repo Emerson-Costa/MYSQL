@@ -501,6 +501,193 @@
     </code>
 </pre>
 
+#### ``UPDATE``
+
+* Atualização Básica.
+<pre>
+    <code>
+        UPDATE tabela
+        SET coluna = valor
+        WHERE condicao;
+    </code>
+</pre>
+
+* Atualização em múltiplas colunas.
+<pre>
+    <code>
+        UPDATE tabela
+        SET coluna1 = valor1, coluna2 = valor2
+        WHERE condicao;
+    </code>
+</pre>
+
+* Atualização com JOIN.
+<pre>
+    <code>
+        UPDATE tabela1
+        INNER JOIN tabela2 ON tabela1.coluna = tabela2.coluna
+        SET tabela1.coluna = valor
+        WHERE condicao;
+    </code>
+</pre>
+
+* Atualização condicional com CASE.
+<pre>
+    <code>
+        SET coluna = CASE
+            WHEN condicao1 THEN valor1
+            WHEN condicao2 THEN valor2
+            ELSE valor_default
+        END
+        WHERE condicao;
+    </code>
+</pre>
+
+* Atualização com Subquery.
+<pre>
+    <code>
+        UPDATE tabela
+        SET coluna = (SELECT valor FROM outra_tabela WHERE condicao)
+        WHERE condicao;
+    </code>
+</pre>
+
+#### ``DELETE``
+
+* Deleção básica.
+<pre>
+    <code>
+        DELETE FROM tabela
+        WHERE condicao;
+    </code>
+</pre>
+
+* Deleção de todos os registros
+<pre>
+    <code>
+       DELETE FROM tabela; 
+    </code>
+</pre>
+
+* Deleção com JOIN
+<pre>
+    <code>
+        DELETE tabela1
+        FROM tabela1
+        INNER JOIN tabela2 ON tabela1.coluna = tabela2.coluna
+        WHERE condicao
+    </code>
+</pre>
+
+* Deleção com subquery
+<pre>
+    <code>
+        DELETE FROM tabela
+        WHERE EXISTS (SELECT 1 FROM outra_tabela WHERE condicao);
+    </code>
+</pre>
+
+* Deleção condicional
+<pre>
+    <code>
+        DELETE FROM tabela
+        WHERE EXISTS (SELECT 1 FROM outra_tabela WHERE condicao);
+    </code>
+</pre>
+
+---
+
+#### ``SELECT``
+
+* Seleção básica.
+<pre>
+    <code>
+        SELECT * FROM coluna1, coluna2
+        FROM nome-tabela;
+    </code>
+</pre>
+
+* Selecionar todas as colunas.
+<pre>
+    <code>
+        SELECT * FROM nome-tabela
+    </code>
+</pre>
+
+* Seleção com condições.
+<pre>
+    <code>
+        SELECT coluna1, coluna2
+        FROM nome-tabela
+        WHERE condicao;
+    </code>
+</pre>
+
+* Seleção com ordenação.
+<pre>
+    <code>
+        SELECT coluna1, coluna2
+        FROM tabela
+        ORDER BY coluna1 ASC/DESC;
+    </code>
+</pre>
+
+* Seleção com limites.
+<pre>
+    <code>
+        SELECT coluna1, coluna2
+        FROM nome-tabela
+        LIMIT numero-linhas;
+    </code>
+</pre>
+
+* Seleção com agrupamentos.
+<pre>
+    <code>
+        SELECT coluna, COUNT(*)  
+        FROM nome-tabela
+        GROUP BY coluna;
+    </code>
+</pre>
+
+* Seleção com agrupamento e condição.
+<pre>
+    <code>
+        SELECT coluna, COUNT(*)  
+        FROM nome-tabela
+        GROUP BY coluna 
+        HAVING COUNT(*) > numero-linhas;   
+    </code>
+</pre>
+
+* Seleção com JOIN
+<pre>
+    <code>
+        SELECT tabela1.coluna, tabela2.coluna
+        FROM tabela1
+        INNER JOIN tabela2 ON tabela1.coluna = tabela2.coluna;
+    </code>
+</pre>
+
+* Seleção com subquery.
+<pre>
+    <code>
+       SELECT coluna1, coluna2
+       FROM tabela
+       WHERE coluna IN (SELECT coluna FROM outra-tabela WHERE condicao);
+    </code>
+</pre>
+
+* Seleção distinta
+<pre>
+    <code>
+        SELECT DISTINCT coluna
+        FROM tabela;
+    </code>
+</pre>
+
+
+
 
 
                                                                                        
@@ -509,13 +696,7 @@
                                                                                       
                                                                                       
                                                                                       
-                                                                                                 
-                                                                                                                                                      
-                                                                                    
-                                                                                    
-                                                                                    
-
-
+                                                                            
 <!--
     <table>: Define o início da tabela.
 
