@@ -69,6 +69,10 @@ Use 'div' para seções de blocos e 'span' para seções de linhas.
 
 Ajudam a definir a estrutura e o significado do conteúdo.
 
+* **Exemplo da estrutura**
+
+![Diagrama](https://i.sstatic.net/fzLpL.png)
+
 * **Header**
 Definição dos cabeçalhos da página.
 ```
@@ -137,7 +141,6 @@ Um simples rodapé.
     <p>Rodapé da Página</p>
 </footer>
 ```
-
 ----
 
 ## Aplicanto os conceitos da semântica
@@ -220,6 +223,3 @@ Um simples rodapé.
  
 </body>
 ```
-![Exemplo 01](estudosHTML\imagens\semantica01.pngg)
-
-![Exemplo 02](estudosHTML/imagens/semantica02.png)
