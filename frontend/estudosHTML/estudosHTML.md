@@ -124,7 +124,7 @@ Artigos independentes.
 ```
 
 * **Aside**
-Conteúdo relacionado como barras laterais.
+Conteúdo relacionado como barras laterais, informações de copright, anúncios e links de rodapés.
 
 ```
 <aside>
@@ -148,78 +148,61 @@ Um simples rodapé.
 * **Aplicação da semântica**
 
 ```
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Estrutura Semântica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
- 
-  <header>
-    <h1>Welcome On Our Website!</h1>
-    <p>Here is our logo and slogan.</p>
-  </header>
-   
-  <nav>
+    <!-- Cabeçalho da Página -->
     <header>
-      <h2>Choose Your Interest</h2>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
-    <ul>
-      <li>Menu 1</li>
-      <li>Menu 2</li>
-      <li>Menu 3</li>
-    </ul>
-  </nav>
-   
-  <article>
-    <header>
-      <h1>Title of Article</h1>
-      <h2>Subtitle of Article</h2>
-    </header>
-     
-    <section>
-      <h3>First Logical Part (e.g. "Theory")</h3>
-      <p>Paragraph 1 in first section</p>
-       
-      <h4>Some Other Subheading in First Section</h4>
-      <p>Paragraph 2 in first section</p>
-    </section>
-     
-    <section>
-      <h3>Second Logical Part (e.g. "Practice")</h3>
-      <p>Paragraph 1 in second section</p>
-      <p>Paragraph 2 in second section</p>
-    </section>
-   
+
+    <!-- Seção Principal do Conteúdo -->
+    <main>
+        <!-- Artigo Principal -->
+        <article>
+            <h1>Título do Artigo</h1>
+            <p>Este é o conteúdo principal do artigo. Aqui você pode colocar parágrafos, imagens, vídeos e outros elementos.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna vitae augue pharetra blandit.</p>
+
+            <!-- Seção Dentro do Artigo -->
+            <section>
+                <h2>Seção do Artigo</h2>
+                <p>Conteúdo da seção dentro do artigo.</p>
+                <p>Proin facilisis libero vitae tortor mollis, nec sollicitudin lorem volutpat.</p>
+            </section>
+
+            <!-- Rodapé do Artigo -->
+            <footer>
+                <p>Escrito por: Autor do Artigo</p>
+                <p>Data: 01 de Janeiro de 2025</p>
+            </footer>
+        </article>
+    </main>
+
+    <!-- Barra Lateral com Conteúdo Relacionado -->
+    <aside>
+        <h2>Conteúdo Relacionado</h2>
+        <p>Informações adicionais, links ou anúncios podem ser colocados aqui.</p>
+    </aside>
+
+    <!-- Rodapé da Página -->
     <footer>
-      <h4>Author Bio</h4>
-      <p>Paragraph in Article's Footer</p>
+        <p>&copy; 2025 MinhaMarca. Todos os direitos reservados.</p>
     </footer>
-   
-  </article>
-   
-  <aside>
-     
-    <h2>Get To Know Us Better</h2>
-     
-    <section>
-      <h3>Popular Posts</h3>
-      <ul>...</ul>
-    </section>
-     
-    <section>
-      <h3>Partners</h3>
-      <ul>...</ul>
-    </section>
-     
-    <section>
-      <h3>Testimonials</h3>
-      <ul>...</ul>
-    </section>
-   
-  </aside>
-   
-  <footer>
-    <ul>
-      <li>Copyright</li>
-      <li>Social Media Links</li>
-    </ul>
-  </footer>
- 
 </body>
+</html>
+
 ```
