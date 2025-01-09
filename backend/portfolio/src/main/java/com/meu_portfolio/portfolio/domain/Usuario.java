@@ -32,6 +32,25 @@ public class Usuario implements Serializable {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Habilidade> habilidades = new ArrayList<>();
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<Idioma> idiomas = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<RedeSocial> redeSociais = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<Experiencia> experiencias = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<Projeto> projetos = new ArrayList<>();
+
+    public Usuario() {
+    }
+
     public Usuario(Integer id, String nome, Date dataNasc, String email, String telefone, String descricao) {
         this.id = id;
         this.nome = nome;
@@ -39,9 +58,6 @@ public class Usuario implements Serializable {
         this.email = email;
         this.telefone = telefone;
         this.descricao = descricao;
-    }
-
-    public Usuario() {
     }
 
     public Integer getId() {
@@ -97,7 +113,36 @@ public class Usuario implements Serializable {
     }
 
     public void setHabilidades(List<Habilidade> habilidades) {
+
         this.habilidades = habilidades;
+    }
+
+    public List<Idioma> getIdiomas() {
+        return idiomas;
+    }
+
+    public void setIdiomas(List<Idioma> idiomas) {
+        this.idiomas = idiomas;
+    }
+
+    public List<RedeSocial> getRedeSociais() {
+        return redeSociais;
+    }
+
+    public List<Experiencia> getExperiencias() {
+        return experiencias;
+    }
+
+    public void setExperiencias(List<Experiencia> experiencias) {
+        this.experiencias = experiencias;
+    }
+
+    public List<Projeto> getProjetos() {
+        return projetos;
+    }
+
+    public void setProjetos(List<Projeto> projetos) {
+        this.projetos = projetos;
     }
 
     @Override
@@ -106,6 +151,10 @@ public class Usuario implements Serializable {
         int result = 1;
         result = prime * result + id;
         return result;
+    }
+
+    public void setRedeSociais(List<RedeSocial> redeSocials) {
+        this.redeSociais = redeSocials;
     }
 
     @Override
