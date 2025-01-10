@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -21,7 +22,7 @@ public class RedeSocial implements Serializable {
     private String url;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinTable(name = "Redes_Sociais_do_Usuario", joinColumns = @JoinColumn(name = "redeSocial_id"), inverseJoinColumns = @JoinColumn(name = "usuario_id"))
     private Usuario usuario;
 
     public RedeSocial() {

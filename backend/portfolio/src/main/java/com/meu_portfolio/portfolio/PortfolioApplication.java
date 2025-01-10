@@ -60,8 +60,9 @@ public class PortfolioApplication implements CommandLineRunner {
 		Habilidade habilidade1 = new Habilidade(null, "Java", "Full Stack", Nivel.MEDIO, usuario);
 		Habilidade habilidade2 = new Habilidade(null, "Python", "BI and Machine Learning", Nivel.BAIXO, usuario);
 		Habilidade habilidade3 = new Habilidade(null, "C#", "Desenvolvedor Pleno", Nivel.ALTO, usuario);
+		Habilidade habilidade4 = new Habilidade(null, "Lua", "Desenvolvedor Jogos", Nivel.MEDIO, usuario);
 
-		habilidadeRepository.saveAll(Arrays.asList(habilidade1, habilidade2, habilidade3));
+		habilidadeRepository.saveAll(Arrays.asList(habilidade1, habilidade2, habilidade3, habilidade4));
 
 		Idioma idioma1 = new Idioma(null, "Inglês", Nivel.MEDIO, usuario);
 		Idioma idioma2 = new Idioma(null, "Espanhol", Nivel.MEDIO, usuario);
@@ -92,7 +93,7 @@ public class PortfolioApplication implements CommandLineRunner {
 
 		projetoRepository.saveAll(Arrays.asList(projeto1, projeto2));
 
-		usuario.getHabilidades().addAll(Arrays.asList(habilidade1, habilidade2, habilidade3));
+		usuario.getHabilidades().addAll(Arrays.asList(habilidade1, habilidade2, habilidade3, habilidade4));
 		usuario.getIdiomas().addAll(Arrays.asList(idioma1, idioma2));
 		usuario.getRedeSociais().addAll(Arrays.asList(redeSocial1, redeSocial2, redeSocial3));
 		usuario.getExperiencias().addAll(Arrays.asList(experiencia1, experiencia2));

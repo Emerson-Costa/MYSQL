@@ -1,8 +1,6 @@
 package com.meu_portfolio.portfolio.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
-
 import com.meu_portfolio.portfolio.domain.enums.Nivel;
 
 import jakarta.persistence.Entity;
@@ -10,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -25,7 +24,7 @@ public class Habilidade implements Serializable {
     private Nivel nivel;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinTable(name = "Habilidades_do_Usuario", joinColumns = @JoinColumn(name = "habilidade_id"), inverseJoinColumns = @JoinColumn(name = "usuario_id"))
     private Usuario usuario;
 
     public Habilidade() {

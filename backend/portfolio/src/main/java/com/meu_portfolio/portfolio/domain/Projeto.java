@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -21,7 +22,7 @@ public class Projeto implements Serializable {
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinTable(name = "Projetos_do_Usuario", joinColumns = @JoinColumn(name = "projeto_id"), inverseJoinColumns = @JoinColumn(name = "usuario_id"))
     private Usuario usuario;
 
     public Projeto() {
